@@ -14,7 +14,7 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 - departments
 - courses
 - teachers
-- exame
+- appeals_exame
 - students
 - appeals_vote
 
@@ -33,7 +33,6 @@ Table = courses
 - departments_id (FK)
 - faculty | VARCHAR(50) | NN |
 - course  | VARCHAR(50) | NN |
-- now     | FLOAT(4,2) | NN |
 - date    | DATE | NN |
 - teachers_id   (FK)
 - note    | TEXT | NULL | 
@@ -58,8 +57,8 @@ Table = teachers
 Table = appeals_exame
 - id    | INDEX | INT or BIGINT | NOTNULL | UNIQUE | AI 
 - corses_id     (FK)
+- teacher_id
 - date  | DATE | NN |
-
 
 
 
@@ -80,9 +79,9 @@ Table = students
 
 Table = appeals_vote
 - id    | INDEX | INT or BIGINT | NOTNULL | UNIQUE | AI 
-- number_student (FK)
-- courses_id 
-- voto_appello | TINYINT | NULL | DEFAULT('in approvazione')
+- students_id (FK)
+- appeals_exame (FK)
+- appeal_vote | TINYINT | NULL | DEFAULT('in approvazione')
 
 
 
