@@ -82,7 +82,14 @@ INNER JOIN `degrees` on `degrees`.`id`;
 (non completo)
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+SELECT *
+FROM `degrees`
+INNER JOIN `courses` ON `courses`.`degree_id` = `degrees`.`id`
+INNER JOIN `course_teacher` ON `courses`.`id` = `course_teacher`.`course_id`
+INNER JOIN `teachers` ON `teachers`.`id` = `course_teacher`.`course_id`;
 
-
-
-
+6. 
+SELECT *
+FROM `teachers`
+INNER JOIN `departments`
+WHERE `departments`.`name` = "Dipartimento di Matematica";
